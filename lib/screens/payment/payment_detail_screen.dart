@@ -65,7 +65,7 @@ class PaymentDetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             _buildLine('ID Fatura:', payment.id.toString()),
             _buildLine('Status:', getStatusMensagem(payment.status)),
-            _buildLine('Vencimento:', dateFormatter.format(DateTime.parse(payment.dueDate!))),
+            _buildLine('Vencimento:', payment.dueDate!),
             _buildLine(
               'Data de Pagamento:',
               payment.paymentDate == null ? 'Não pago ainda' : dateFormatter.format(DateTime.parse(payment.dueDate!))),

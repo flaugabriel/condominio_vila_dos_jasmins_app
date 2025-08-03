@@ -1,6 +1,7 @@
 // lib/screens/payment_list_screen.dart
 import 'dart:convert';
 import 'package:condominio_vila_dos_jasmins_app/screens/payment/payment_detail_screen.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:condominio_vila_dos_jasmins_app/providers/payment_provider.dart';
 import 'package:flutter/material.dart';
@@ -44,9 +45,10 @@ class HomeScreen extends StatelessWidget {
           }
 
           if (snapshot.hasError) {
-            return Center(child: Text('Sem pagamentos agendados esse mês!', style: TextStyle(fontSize: 24),));
+            return Container(child: Text('Sem pagamentos agendados esse mês!', style: TextStyle(fontSize: 24)));
           } else {
           final payment = snapshot.data!;
+
           return Padding(
             padding: const EdgeInsets.all(12.0),
             child: ListView(
